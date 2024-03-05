@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:cc="jakarta.faces.composite"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="jakarta.faces.core"
+      xmlns:h="jakarta.faces.html">
+
+    <!-- INTERFACE -->
+    <cc:interface>
+    </cc:interface>
+
+    <!-- IMPLEMENTATION -->
+    <cc:implementation>
+        <h:form class="flex justify-content-center flex-wrap">
+            <fieldset>
+                
+                <div class="card">
+       
+        <div class="ui-fluid formgrid grid">
+            <div class="field col">
+                <p:outputLabel for="firstname" value="Firstname"/>
+                <p:inputText autocomplete="off" id="firstname"/>
+            </div>
+            <div class="field col">
+                <p:outputLabel for="othernames" value="Other Names"/>
+                <p:inputText id="othernames"/>
+            </div>
+        </div>
+    </div>
+
+             <div class="card">
+       
+        <div class="ui-fluid formgrid">
+            <div class="field">
+                <p:outputLabel for="email" value="Email"/>
+                <p:inputText autocomplete="off" type="email" id="email"/>
+            </div>
+           
+        </div>
+    </div>
+
+    
+
+    <div class="card">
+              
+        <h5>I am an</h5>
+        <div class="formgroup-inline">
+            <div class="field-checkbox">
+                <p:selectOneRadio id="line" layout="lineDirection">
+            <f:selectItem itemLabel="Individual" itemValue="individual"/>
+            <f:selectItem itemLabel="Organization" itemValue="organization"/>
+            
+        </p:selectOneRadio>
+            </div>
+           
+        </div>
+        
+    </div>
+
+   
+
+    <div class="card">
+        <h5>Advanced</h5>
+        <div class="ui-fluid formgrid">            
+            
+            <div class="field col-12">
+                <p:outputLabel for="userrole" value="I want to sign up as a"/>
+                <p:selectOneMenu id="userrole">
+                    <f:selectItem itemLabel="Select One" itemValue="#{null}" noSelectionOption="true"/>
+                    <f:selectItem itemLabel="Waste Generator" itemValue="generator"/>
+                    <f:selectItem itemLabel="Waste Collector(Aggregator and Segragator)" itemValue="collector"/>
+                    <f:selectItem itemLabel="Waste Recycler" itemValue="recycler"/>
+                    <f:selectItem itemLabel="Manufacturer" itemValue="manufacturer"/>
+                </p:selectOneMenu>
+            </div>
+            
+        </div>
+    </div>
+           <div class="card">
+        <h5>Vertical and Grid</h5>
+        <div class="ui-fluid formgrid">
+            <div class="field">
+                <p:outputLabel for="password" value="Password"/>
+                <p:password id="password" feedback="true" inline="true"/>
+            </div>
+            <div class="field">
+                <p:outputLabel for="confirmpassword" value="Confirm Password"/>
+                <p:password id="confirmpassword"  feedback="true" inline="true"/>
+            </div>
+        </div>
+    </div>
+                
+            </fieldset>
+    
+    
+
+         
+
+</h:form>
+    </cc:implementation>
+</html>
