@@ -28,3 +28,9 @@ a:link:hover, a:visited:hover  {
   text-decoration : underline;
 }
 
+.ui-selectonelistbox, .ui-selectmanymenu,.ui-multiselectlistbox-listcontainer{
+    width:400px !important;
+}
+.test{
+    width: 200% !important; 
+}

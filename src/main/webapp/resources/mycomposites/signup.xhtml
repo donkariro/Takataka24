@@ -42,9 +42,11 @@
 
     
 
-    <div class="card">
+                <div class="card"><p:card>
               
-        <h5>I am an</h5>
+        <p:outputLabel value="I am an:"/>
+        <br></br>
+        <br></br>
         <div class="formgroup-inline">
             <div class="field-checkbox">
                 <p:selectOneRadio id="line" layout="lineDirection">
@@ -55,17 +57,17 @@
             </div>
            
         </div>
-        
+        </p:card>
     </div>
 
    
 
     <div class="card">
-        <h5>Advanced</h5>
-        <div class="ui-fluid formgrid">            
+        <p:outputLabel value="I want to sign up as:"/>
+        <div id="roletype" class="ui-fluid formgrid">            
             
             <div class="field col-12">
-                <p:outputLabel for="userrole" value="I want to sign up as a"/>
+                
                 <p:selectOneMenu id="userrole">
                     <f:selectItem itemLabel="Select One" itemValue="#{null}" noSelectionOption="true"/>
                     <f:selectItem itemLabel="Waste Generator" itemValue="generator"/>
