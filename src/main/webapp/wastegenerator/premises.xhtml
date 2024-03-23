@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./../WEB-INF/webparts/mytemplate.xhtml"
+                xmlns:h="jakarta.faces.html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="jakarta.faces.core">
+
+    <ui:define name="top">
+        top
+    </ui:define>
+
+    <ui:define name="content">
+      
+        <h:form class="flex justify-content-center flex-wrap">
+            <fieldset>
+                
+
+                <p:card>
+       
+        <div class="ui-fluid formgrid">
+            <div class="field">
+                <p:outputLabel for="premises" value="Name of Premises:"/>
+                <p:inputText autocomplete="off" type="text" id="premises"/>
+            </div>
+           
+        </div>
+    </p:card>
+<br/>
+<br/>
+    
+
+                <p:card subtitle="Ownership">              
+     
+         <div class="formgroup-inline">
+            <div class="field-checkbox">
+                <p:selectOneRadio id="line" layout="lineDirection">
+            <f:selectItem itemLabel="Private" itemValue="private"/>
+            <f:selectItem itemLabel="Public / Government" itemValue="public"/>
+            
+        </p:selectOneRadio>
+            </div>
+           
+        </div>
+    </p:card>
+        <br/>
+        <br/>
+                <p:card subtitle="Address">
+       
+        <div class="ui-fluid formgrid grid">
+            <div class="field col">
+                <p:outputLabel for="county" value="County"/>
+                <p:inputText autocomplete="off" id="county"/>
+            </div>
+            <div class="field col">
+                <p:outputLabel for="city" value="City / Township"/>
+                <p:inputText id="city"/>
+            </div>
+        </div>
+                    
+                    <div class="ui-fluid formgrid grid">
+            <div class="field col">
+                <p:outputLabel for="estate" value="Estate"/>
+                <p:inputText autocomplete="off" id="estate"/>
+            </div>
+            <div class="field col">
+                <p:outputLabel for="street" value="Stree name and No:"/>
+                <p:inputText id="street"/>
+            </div>
+        </div>
+    </p:card>
+        <br/>
+        <br/>
+        <p:card subtitle="Category  and type">
+            <p:multiSelectListbox style="width: 100%" value="#{multiSelectView.selection}" effect="slide" header="Category"
+                            showHeaders="true">
+        <f:selectItems value="#{multiSelectView.categories}"/>
+    </p:multiSelectListbox>
+                </p:card>
+          
+            </fieldset>
+        </h:form>
+          
+    </ui:define>
+
+    <ui:define name="bottom">
+        bottom
+    </ui:define>
+
+</ui:composition>

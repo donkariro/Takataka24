@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./../WEB-INF/webparts/mytemplate.xhtml"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="jakarta.faces.html"
+                xmlns:f="jakarta.faces.core">
+
+    <ui:define name="top">
+        top
+    </ui:define>
+
+    <ui:define name="content">
+      <h:form class="flex justify-content-evenly flex-wrap">
+            <p:fieldset style="width: 60%" legend="List waste management service provided">
+                <div class="formgrid grid">
+                    
+                    <p:card class="field col" subtitle="Services provided">
+                
+                        <p:selectManyCheckbox columns="1" id="servicetype" widgetVar="blub" layout="pageDirection">         
+            <f:selectItem itemLabel="Waste Collection and transportation" itemValue="collection"/>
+            <f:selectItem itemLabel="Waste Aggregation and Segregation" itemValue="aggregation"/>
+            <f:selectItem itemLabel="Waste Sorting" itemValue="sorting"/>
+            
+        </p:selectManyCheckbox>
+            </p:card>
+                    
+                    <div class="col-1">
+            <p:divider layout="vertical">
+               
+            </p:divider>
+        </div>
+            
+            <p:card class="field col" subtitle="Form of waste we handle">              
+                <p:selectManyCheckbox columns="2" id="basicAjax" widgetVar="blub">          
+            <f:selectItem itemLabel="Solid" itemValue="solid"/>
+            <f:selectItem itemLabel="Liquid" itemValue="liquid"/>
+           
+        </p:selectManyCheckbox>
+            </p:card>
+                    
+                </div>
+                 
+                <div class="formgrid grid">
+                    <p:card class="field col" subtitle="My waste classification">
+                        
+                        
+                        <p:selectOneMenu id="option">
+                    <f:selectItem itemLabel="Select One" itemValue=""/>
+                    <f:selectItem itemLabel="Municipal waste (household and commercial)" itemValue="Option1"/>
+                    <f:selectItem itemLabel="Industrial waste (including manufacturing)" itemValue="Option2"/>
+                    <f:selectItem itemLabel="Construction and demolition waste" itemValue="Option3"/>
+                    <f:selectItem itemLabel="Mining waste" itemValue="Option1"/>
+                    <f:selectItem itemLabel="Waste from electrical and electronic equipment" itemValue="Option2"/>
+                    <f:selectItem itemLabel="Packaging waste" itemValue="Option3"/>
+                    <f:selectItem itemLabel="End-of-life vehicles and tyres" itemValue="Option1"/>
+                    <f:selectItem itemLabel="Agricultural waste" itemValue="Option2"/>
+                    <f:selectItem itemLabel="Biodegradable municipal waste" itemValue="Option3"/>
+                    <f:selectItem itemLabel="Waste from Municipal Services" itemValue="Option1"/>
+                   
+                   </p:selectOneMenu>
+                    
+                </p:card>
+                    
+                     <div class="col-1">
+            <p:divider layout="vertical">
+               
+            </p:divider>
+        </div>
+                
+                <p:card class="field col" subtitle="Do we handle hazardous waste?">
+                   <p:selectBooleanButton onLabel="Yes" offLabel="No"
+                                onIcon="pi pi-check" offIcon="pi pi-times" style="width:6rem" />
+
+                </p:card>
+                </div>
+                
+               
+         <div class="formgrid grid">
+                
+                
+                <p:card class="field col" subtitle="Waste treatment methods you do">
+        <p:selectManyCheckbox columns="1" id="processing" widgetVar="blub" layout="pageDirection">         
+            <f:selectItem itemLabel="Landfill" itemValue="landfill"/>
+            <f:selectItem itemLabel="Incineration" itemValue="incineration"/>
+            <f:selectItem itemLabel="Recycling" itemValue="recycling"/>
+            <f:selectItem itemLabel="Biological Reprocessing" itemValue="reprocessing"/>
+            <f:selectItem itemLabel="Energy recovery" itemValue="energy"/>
+            <f:selectItem itemLabel="Pyrolisis" itemValue="pyrolisis"/>
+            <f:selectItem itemLabel="Resource recovery" itemValue="resource"/>
+             <f:selectItem itemLabel="Waste valorization " itemValue="valorization"/>
+        </p:selectManyCheckbox>
+                     
+                </p:card>
+             
+               <div class="col-1">
+            <p:divider layout="vertical">
+               
+            </p:divider>
+        </div>
+             
+             <p:card style="width: 40%" class="field col" subtitle="Volume of waste handled weekly (MT)">
+                 <div style="width: 100%" class="field col-12 md:col-4">               
+                <p:spinner id="step" value="" stepFactor="0.25"/>
+            </div>
+                </p:card>
+             
+         </div>
+                
+            </p:fieldset>
+           
+         
+                     
+        </h:form>
+
+    </ui:define>
+
+    <ui:define name="bottom">
+        bottom
+    </ui:define>
+
+</ui:composition>

@@ -11,6 +11,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jakartaee>10.0.0</jakartaee>
         <primefaces>13.0.1</primefaces>
+        <lombok>1.18.30</lombok>
     </properties>
     
     <dependencies>
@@ -20,6 +21,12 @@
             <version>${jakartaee}</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+		<groupId>org.projectlombok</groupId>
+		<artifactId>lombok</artifactId>
+		<version>${lombok}</version>
+		<scope>provided</scope>
+	</dependency>
         <dependency>
     <groupId>org.primefaces</groupId>
     <artifactId>primefaces</artifactId>

@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./../WEB-INF/webparts/mytemplate.xhtml"
+                xmlns:h="jakarta.faces.html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="jakarta.faces.core">
+
+    <ui:define name="top">
+        top
+    </ui:define>
+
+    <ui:define name="content">
+        <h:form class="flex justify-content-evenly flex-wrap">
+            <p:fieldset style="width: 60%" legend="Waste collection Request for Service">
+                <div class="formgrid grid">
+                    
+                    <p:card class="field col" subtitle="Is your waste Hazardous?">
+                
+        <p:selectOneRadio id="hazardous" layout="lineDirection">
+            <f:selectItem itemLabel="Yes" itemValue="yes"/>
+            <f:selectItem itemLabel="No" itemValue="no"/>
+            <f:selectItem itemLabel="Partly" itemValue="partly"/>
+        </p:selectOneRadio>
+            </p:card>
+                    
+                    <div class="col-1">
+            <p:divider layout="vertical">
+               
+            </p:divider>
+        </div>
+            
+            <p:card class="field col" subtitle="Is your waste Biodegradable?">
+              
+        <p:selectOneRadio id="biodegradable" layout="lineDirection">
+            <f:selectItem itemLabel="Yes" itemValue="yes"/>
+            <f:selectItem itemLabel="No" itemValue="no"/>
+            <f:selectItem itemLabel="Partly" itemValue="partly"/>
+        </p:selectOneRadio>
+            </p:card>
+                    
+                </div>
+                 
+                <div class="formgrid grid">
+                    <p:card class="field col" subtitle="Natural state of my waste">
+                        <p:selectManyCheckbox columns="2" id="state" widgetVar="blub">
+                            <f:selectItem itemLabel="Solid" itemValue="solid"/>
+                            
+            <f:selectItem itemLabel="Liquid" itemValue="liquid"/>
+        </p:selectManyCheckbox>
+                    
+                </p:card>
+                    
+                     <div class="col-1">
+            <p:divider layout="vertical">
+               
+            </p:divider>
+        </div>
+                
+                <p:card class="field col" subtitle="Is waste sorted?">
+                   <p:selectBooleanButton onLabel="Yes" offLabel="No"
+                                onIcon="pi pi-check" offIcon="pi pi-times" style="width:6rem" />
+
+                </p:card>
+                </div>
+                
+               
+         <div class="formgrid grid">
+                
+                
+                <p:card class="field col" subtitle="My waste classification">
+        
+                <p:selectOneMenu id="option">
+                    <f:selectItem itemLabel="Select One" itemValue=""/>
+                    <f:selectItem itemLabel="Municipal waste (household and commercial)" itemValue="Option1"/>
+                    <f:selectItem itemLabel="Industrial waste (including manufacturing)" itemValue="Option2"/>
+                    <f:selectItem itemLabel="Construction and demolition waste" itemValue="Option3"/>
+                    <f:selectItem itemLabel="Mining waste" itemValue="Option1"/>
+                    <f:selectItem itemLabel="Waste from electrical and electronic equipment" itemValue="Option2"/>
+                    <f:selectItem itemLabel="Packaging waste" itemValue="Option3"/>
+                    <f:selectItem itemLabel="End-of-life vehicles and tyres" itemValue="Option1"/>
+                    <f:selectItem itemLabel="Agricultural waste" itemValue="Option2"/>
+                    <f:selectItem itemLabel="Biodegradable municipal waste" itemValue="Option3"/>
+                    <f:selectItem itemLabel="Waste from Municipal Services" itemValue="Option1"/>
+                   
+                   </p:selectOneMenu>
+                </p:card>
+             
+               <div class="col-1">
+            <p:divider layout="vertical">
+               
+            </p:divider>
+        </div>
+             
+             <p:card style="width: 40%" class="field col" subtitle="Specicif materials in waste">
+                 <p:autoComplete style="width: 20%" id="countries" multiple="true" value="#{autoCompleteView.selectedMaterial}"
+                                    completeMethod="#{autoCompleteView.completeMaterial}"
+                        
+                         forceSelection="true" scrollHeight="250">
+           
+        </p:autoComplete>
+                </p:card>
+             
+         </div>
+                
+            </p:fieldset>
+           
+              
+        </h:form>
+    </ui:define>
+
+    <ui:define name="bottom">
+        bottom
+    </ui:define>
+
+</ui:composition>
