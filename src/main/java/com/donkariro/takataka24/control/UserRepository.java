@@ -4,7 +4,7 @@
  */
 package com.donkariro.takataka24.control;
 
-import com.donkariro.takataka24.entity.User;
+import com.donkariro.takataka24.entity.Member;
 import jakarta.ejb.Stateless;
 import jakarta.ejb.LocalBean;
 import jakarta.persistence.EntityManager;
@@ -21,7 +21,8 @@ public class UserRepository {
     @PersistenceContext
     EntityManager entityManger;
     
-    public void insertUser(User user){
+    public void insertUser(Member user){
+        System.out.print("log from repo" + user.getFirstName());
         entityManger.persist(user);
         
     }

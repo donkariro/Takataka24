@@ -5,7 +5,7 @@
 package com.donkariro.takataka24.boundary;
 
 import com.donkariro.takataka24.control.UserRepository;
-import com.donkariro.takataka24.entity.User;
+import com.donkariro.takataka24.entity.Member;
 import jakarta.ejb.Stateless;
 import jakarta.ejb.LocalBean;
 import jakarta.inject.Inject;
@@ -21,7 +21,8 @@ public class UserService {
     @Inject
     private UserRepository userRepository;
     
-    public void addUser(User user){
+    public void addUser(Member user){
+         System.out.print("log from service" + user.getFirstName());
         this.userRepository.insertUser(user);
     }
 }

@@ -9,6 +9,7 @@ import com.donkariro.takataka24.dto.UserDTO;
 import com.donkariro.takataka24.dto.UserMapper;
 import com.donkariro.takataka24.entity.UserRole;
 import com.donkariro.takataka24.entity.UserType;
+import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
 import lombok.Data;
@@ -18,6 +19,7 @@ import lombok.Data;
  * @author d.kariro
  */
 @Named
+@RequestScoped
 @Data
 public class SignUpBacking {
     
@@ -43,8 +45,10 @@ public class SignUpBacking {
         userDTO.setUserType(UserType.INDIVIDUAL);
         userDTO.setUserRole(UserRole.RECYCLER);
         userDTO.setPassword(password);
-        
+        System.out.print("log from bean " + firstName);
+        System.out.print("log from dto " + this.userDTO.getFirstName()); 
         this.userService.addUser(this.userMapper.userDTOToUser(userDTO));
+        
         return "";
     }
     

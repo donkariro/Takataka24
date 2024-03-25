@@ -4,9 +4,11 @@
  */
 package com.donkariro.takataka24.dto;
 
-import com.donkariro.takataka24.entity.User;
+import com.donkariro.takataka24.entity.Member;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 import org.mapstruct.MappingConstants;
+import org.mapstruct.ReportingPolicy;
 
 /**
  *
@@ -14,6 +16,7 @@ import org.mapstruct.MappingConstants;
  */
 @Mapper(componentModel = MappingConstants.ComponentModel.CDI)
 public interface UserMapper {
-    
-    User userDTOToUser(UserDTO dto);
+     
+   
+    Member userDTOToUser(UserDTO dto);
 }

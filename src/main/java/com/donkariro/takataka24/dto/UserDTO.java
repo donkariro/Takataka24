@@ -6,8 +6,6 @@ package com.donkariro.takataka24.dto;
 
 import com.donkariro.takataka24.entity.UserRole;
 import com.donkariro.takataka24.entity.UserType;
-import jakarta.enterprise.context.Dependent;
-import jakarta.inject.Named;
 import lombok.Data;
 
 /**
@@ -20,9 +18,10 @@ public class UserDTO {
     private String firstName;
     private String otherNames;
     private String email;
+    private String phoneNumber;
     private UserType userType;
     private UserRole userRole;
-    private String password;
+    private String password; 
     
     
 }
