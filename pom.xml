@@ -12,8 +12,11 @@
         <jakartaee>10.0.0</jakartaee>
         <primefaces>13.0.1</primefaces>
         <lombok>1.18.30</lombok>
+         <querydsl.version>5.1.0</querydsl.version>
+          <org.mapstruct.version>1.6.0.Beta1</org.mapstruct.version>
     </properties>
     
+   
     <dependencies>
         <dependency>
             <groupId>jakarta.platform</groupId>
@@ -39,6 +42,28 @@
     <version>4.3</version>
 </dependency>
 
+<dependency>
+        <groupId>com.querydsl</groupId>
+        <artifactId>querydsl-apt</artifactId>
+        <version>${querydsl.version}</version>
+        <classifier>jakarta</classifier>
+        <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+        <groupId>com.querydsl</groupId>
+        <artifactId>querydsl-jpa</artifactId>
+        <classifier>jakarta</classifier>
+        <version>${querydsl.version}</version>
+    </dependency>
+   
+    <dependency>
+        <groupId>org.mapstruct</groupId>
+        <artifactId>mapstruct</artifactId>
+        <version>${org.mapstruct.version}</version>
+    </dependency>
+
+
     </dependencies>
     
     <build>
@@ -50,6 +75,19 @@
                 <configuration>
                     <source>11</source>
                     <target>11</target>
+                    <annotationProcessorPaths>
+                    <path>
+                        <groupId>org.mapstruct</groupId>
+                        <artifactId>mapstruct-processor</artifactId>
+                        <version>${org.mapstruct.version}</version>
+                    </path>
+                    <path>
+		<groupId>org.projectlombok</groupId>
+		<artifactId>lombok</artifactId>
+		<version>${lombok}</version>
+	</path>
+                    <!-- other annotation processors -->
+                </annotationProcessorPaths>
                 </configuration>
             </plugin>
             <plugin>
@@ -57,6 +95,7 @@
                 <artifactId>maven-war-plugin</artifactId>
                 <version>3.3.2</version>
             </plugin>
+           
         </plugins>
     </build>
 </project>

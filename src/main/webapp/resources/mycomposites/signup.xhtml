@@ -20,11 +20,11 @@
         <div class="ui-fluid formgrid grid">
             <div class="field col">
                 <p:outputLabel for="firstname" value="Firstname"/>
-                <p:inputText autocomplete="off" id="firstname"/>
+                <p:inputText value="#{signUpBacking.firstName}" autocomplete="off" id="firstname"/>
             </div>
             <div class="field col">
                 <p:outputLabel for="othernames" value="Other Names"/>
-                <p:inputText id="othernames"/>
+                <p:inputText value="#{signUpBacking.otherNames}" id="othernames"/>
             </div>
         </div>
     </div>
@@ -34,7 +34,7 @@
         <div class="ui-fluid formgrid">
             <div class="field">
                 <p:outputLabel for="email" value="Email"/>
-                <p:inputText autocomplete="off" type="email" id="email"/>
+                <p:inputText value="#{signUpBacking.email}" autocomplete="off" type="email" id="email"/>
             </div>
            
         </div>
@@ -49,7 +49,7 @@
         <br></br>
         <div class="formgroup-inline">
             <div class="field-checkbox">
-                <p:selectOneRadio id="line" layout="lineDirection">
+                <p:selectOneRadio value="#{signUpBacking.userType}" id="line" layout="lineDirection">
             <f:selectItem itemLabel="Individual" itemValue="individual"/>
             <f:selectItem itemLabel="Organization" itemValue="organization"/>
             
@@ -68,7 +68,7 @@
             
             <div class="field col-12">
                 
-                <p:selectOneMenu id="userrole">
+                <p:selectOneMenu value="#{signUpBacking.userRole}" id="userrole">
                     <f:selectItem itemLabel="Select One" itemValue="#{null}" noSelectionOption="true"/>
                     <f:selectItem itemLabel="Waste Generator" itemValue="generator"/>
                     <f:selectItem itemLabel="Waste Collector(Aggregator and Segragator)" itemValue="collector"/>
@@ -84,15 +84,16 @@
         <div class="ui-fluid formgrid">
             <div class="field">
                 <p:outputLabel for="password" value="Password"/>
-                <p:password id="password" feedback="true" inline="true"/>
+                <p:password value="#{signUpBacking.password}" id="password" feedback="true" inline="true"/>
             </div>
             <div class="field">
                 <p:outputLabel for="confirmpassword" value="Confirm Password"/>
-                <p:password id="confirmpassword"  feedback="true" inline="true"/>
+                <p:password value="#{signUpBacking.confirmPassword}" id="confirmpassword"  feedback="true" inline="true"/>
             </div>
         </div>
     </div>
-                
+                 
+                 <p:commandButton action="#{signUpBacking.signUp()}" value="Submit" />
             </fieldset>
     
     
