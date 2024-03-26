@@ -11,7 +11,9 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import java.io.Serializable;
+import java.util.List;
 import lombok.Data;
 
 /**
@@ -40,6 +42,13 @@ public class Member implements Serializable {
     @Enumerated(STRING)
     @Column(name="user_type")
     private UserType userType;
+    
+    @OneToMany
+    private List<WasteCollectionService> wasteCollectionService;
+    @OneToMany
+    private List<WasteCollectionServiceRequest> wasteCollectionServiceRequest;
+    @OneToMany
+    private List<Premises> premises;
     
           
 }
