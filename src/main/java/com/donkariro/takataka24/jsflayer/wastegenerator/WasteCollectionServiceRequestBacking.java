@@ -2,9 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.donkariro.takataka24.dto;
+package com.donkariro.takataka24.jsflayer.wastegenerator;
 
-import com.donkariro.takataka24.entity.NaturalState;
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.inject.Named;
 import java.util.List;
 import lombok.Data;
 
@@ -12,13 +13,15 @@ import lombok.Data;
  *
  * @author d.kariro
  */
+@Named("wcsrbacking")
+@RequestScoped
 @Data
-public class WCSRequestDTO {
+public class WasteCollectionServiceRequestBacking {
     
-    private String hazardousStatus;
+    private String hazardStatus;
     private String biodegradableStatus;
-    private NaturalState naturalState;
-    private boolean isWasteSorted;
+    private String naturalState;
+    private String isWasteSorted;
     private String wasteClass;
     private List<String> keyMaterialsInWaste;
     

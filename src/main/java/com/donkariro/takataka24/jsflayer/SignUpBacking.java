@@ -6,7 +6,7 @@ package com.donkariro.takataka24.jsflayer;
 
 import com.donkariro.takataka24.boundary.UserService;
 import com.donkariro.takataka24.dto.UserDTO;
-import com.donkariro.takataka24.dto.UserMapper;
+import com.donkariro.takataka24.mappers.UserMapper;
 import com.donkariro.takataka24.entity.UserRole;
 import com.donkariro.takataka24.entity.UserType;
 import jakarta.enterprise.context.RequestScoped;
