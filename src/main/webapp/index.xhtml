@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h:outputStylesheet name="css/default.css"/>
+        <h:outputStylesheet name="css/cssLayout.css"/>
+        <h:outputStylesheet name="css/primeflex.min.css"/>
+        <title>Takataka24</title>
+    </h:head>
+    <h:body>
+        <h:form>
+       <div class="grid grid-nogutter surface-section text-800">
+    <div class="col-12 md:col-6 p-6 text-center md:text-left flex align-items-center ">
+        <section>
+            <span class="block text-6xl font-bold mb-1">Innovating for a cleaner Planet! </span>
+            <div class="text-6xl text-primary font-bold mb-3">Building the network effect into waste management</div>
+            <p class="mt-0 mb-4 text-700 line-height-3">We are building a platform that connects waste generators to waste collectors, recyclers and manufactures for better and a more sustainable waste management</p>
+
+            <p:commandButton process="@this" ajax="false" action="signup?faces-redirect=true" value="Join us" class="justify-content-center mr-3 ui-button-raised"/>
+            <p:commandButton action="login" value="Login" class="justify-content-center mr-3 ui-button-raised"/>
+             
+        </section>
+    </div>
+    <div class="col-12 md:col-6 overflow-hidden">
+        <p:graphicImage name="images/r8.jpg" alt="Image"
+                        styleClass="md:ml-auto block md:h-full"
+                        style="clip-path: polygon(8% 0, 100% 0%, 100% 100%, 0 100%)"/>
+    </div>
+</div>
+        <br/><!-- comment -->
+        <br/>
+        <br/>
+         <br/>
+
+<div class="surface-section text-center">
+    
+    <div class="grid">
+        <div class="col-12 md:col-4 mb-4 px-5">
+            <span class="p-3 shadow-2 mb-3 inline-block surface-card" style="border-radius: 10px">
+                <i class="pi pi-home text-4xl text-blue-500" />
+            </span>
+            <div class="text-900 mb-3 font-medium">Order for Waste collection Services</div>
+            <span class="text-700 text-sm line-height-3">List orders for waste collection services</span>
+        </div>
+        <div class="col-12 md:col-4 mb-4 px-5">
+            <span class="p-3 shadow-2 mb-3 inline-block surface-card" style="border-radius: 10px">
+                <i class="pi pi-trash text-4xl text-blue-500" />
+            </span>
+            <div class="text-900 mb-3 font-medium">Bid for waste collection and list waste material for sale</div>
+            <span class="text-700 text-sm line-height-3">Book and bid for waste collection services and sell assorted and aggregated waste material</span>
+        </div>
+        <div class="col-12 md:col-4 mb-4 px-5">
+            <span class="p-3 shadow-2 mb-3 inline-block surface-card" style="border-radius: 10px">
+                <i class="pi pi-sync text-4xl text-blue-500" />
+            </span>
+            <div class="text-900 mb-3 font-medium">Bid for sorted and aggregated materila for recycling</div>
+            <span class="text-700 text-sm line-height-3">Book and buy aggregated and sorted waste material for recycling and re-use</span>
+        </div>
+       
+        
+       
+    </div>
+</div>
+</h:form>
+
+    </h:body>
+</html>

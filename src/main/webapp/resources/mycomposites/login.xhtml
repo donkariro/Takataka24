@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:cc="http://xmlns.jcp.org/jsf/composite"
+      xmlns:h="jakarta.faces.html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <!-- INTERFACE -->
+    <cc:interface>
+    </cc:interface>
+
+    <!-- IMPLEMENTATION -->
+    <cc:implementation>
+        
+        <h:form>
+            <fieldset>
+                <div class="field">
+    <label for="username">Username</label>
+   
+    <p:inputText value="#{loginBacking.userName}" id="username" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"/>
+                </div>
+<div class="field">
+    <label for="password">Password</label>
+   
+    <p:inputText value="#{loginBacking.password}" id="password" type="password" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"/>
+</div>
+                
+             <p:commandButton action="#{loginBacking.submit()}" value="Submit" />
+            </fieldset>
+    
+                     
+</h:form>
+    </cc:implementation>
+</html>

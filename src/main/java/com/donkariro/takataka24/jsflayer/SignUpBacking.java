@@ -9,9 +9,13 @@ import com.donkariro.takataka24.dto.UserDTO;
 import com.donkariro.takataka24.mappers.UserMapper;
 import com.donkariro.takataka24.entity.UserRole;
 import com.donkariro.takataka24.entity.UserType;
+import jakarta.annotation.PostConstruct;
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
+import jakarta.security.enterprise.identitystore.Pbkdf2PasswordHash;
+import java.util.HashMap;
+import java.util.Map;
 import lombok.Data;
 
 /**
@@ -29,6 +33,8 @@ public class SignUpBacking {
     private UserDTO userDTO;
     @Inject
     private UserMapper userMapper;
+    @Inject 
+    Pbkdf2PasswordHash passwordHash;
     
     private String firstName;
     private String otherNames;
@@ -44,12 +50,20 @@ public class SignUpBacking {
         userDTO.setEmail(email);
         userDTO.setUserType(UserType.INDIVIDUAL);
         userDTO.setUserRole(UserRole.RECYCLER);
-        userDTO.setPassword(password);
-        System.out.print("log from bean " + firstName);
-        System.out.print("log from dto " + this.userDTO.getFirstName()); 
+        userDTO.setPassword(this.passwordHash.generate(password.toCharArray()));
+        
         this.userService.addUser(this.userMapper.userDTOToUser(userDTO));
         
         return "";
     }
+    @PostConstruct
+    public void init(){
+        Map<String, String> parameters = new HashMap<>();
+        parameters.put("Pbkdf2PasswordHash.Iterations", "3072");
+        parameters.put("Pbkdf2PasswordHash.Algorithm", "PBKDF2WithHmacSHA512");
+        parameters.put("Pbkdf2PasswordHash.SaltSizeBytes", "64");
+        passwordHash.initialize(parameters);
+    }
+    
     
 }

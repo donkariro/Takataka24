@@ -22,4 +22,14 @@
     <welcome-file-list>
         <welcome-file>index.xhtml</welcome-file>
     </welcome-file-list>
+    
+    <data-source>
+  <name>java:app/Takataka24/takataka24db</name>
+  <class-name>org.postgresql.ds.PGSimpleDataSource</class-name>
+  <url>jdbc:postgresql://ep-misty-rice-a21ix3o2.eu-central-1.aws.neon.tech/takataka24db?&sslmode=require</url>
+  <user>admin</user>
+  <password>k3eWJKLnm7dP</password>
+  
+  
+</data-source>
 </web-app>

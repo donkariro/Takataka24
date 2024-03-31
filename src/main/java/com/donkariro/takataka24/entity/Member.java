@@ -20,7 +20,7 @@ import lombok.Data;
  *
  * @author d.kariro
  */
-@Entity
+@Entity(name="users")
 @Data
 public class Member implements Serializable {
 
@@ -37,7 +37,7 @@ public class Member implements Serializable {
     private String phoneNumber;
     private String password;
     @Enumerated(STRING)
-    @Column(name="user_role")
+    @Column(name="group_role")
     private UserRole role;
     @Enumerated(STRING)
     @Column(name="user_type")

@@ -22,7 +22,7 @@
         <div class="ui-fluid formgrid">
             <div class="field">
                 <p:outputLabel for="premises" value="Name of Premises:"/>
-                <p:inputText autocomplete="off" type="text" id="premises"/>
+                <p:inputText value="#{addPremisesBacking.name}" autocomplete="off" type="text" id="premises"/>
             </div>
            
         </div>
@@ -35,7 +35,7 @@
      
          <div class="formgroup-inline">
             <div class="field-checkbox">
-                <p:selectOneRadio id="line" layout="lineDirection">
+                <p:selectOneRadio value="#{addPremisesBacking.ownership}" id="line" layout="lineDirection">
             <f:selectItem itemLabel="Private" itemValue="private"/>
             <f:selectItem itemLabel="Public / Government" itemValue="public"/>
             
